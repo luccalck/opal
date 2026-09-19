@@ -1,0 +1,40 @@
+{
+  "rel-001": {
+    "versao": "4.2.0",
+    "data": "2026-09-18",
+    "linhas": [
+      { "linha": 1, "texto": "a1b2c3d feat(pedidos): permite anexar ordem de compra em PDF na abertura do pedido" },
+      { "linha": 2, "texto": "9f8e7d6 fix(catalogo): corrige numero de peca duplicado na busca por aplicacao" },
+      { "linha": 3, "texto": "5c4b3a2 chore(deps): bump lodash from 4.17.20 to 4.17.21" },
+      { "linha": 4, "texto": "7d6e5f4 security: bloqueia upload de arquivo executavel no portal de pedidos" },
+      { "linha": 5, "texto": "Merge pull request #812 from carparts/release-4.2" },
+      { "linha": 6, "texto": "2e3f4a5 refactor(core): extrai servico de precificacao para modulo proprio" },
+      { "linha": 7, "texto": "8b9c0d1 feat(cotacao): exibe prazo de entrega estimado por item na cotacao" },
+      { "linha": 8, "texto": "3a4b5c6 fix(portal): corrige timeout ao listar pedidos com mais de 500 itens" },
+      { "linha": 9, "texto": "1f2e3d4 test: adiciona testes de integracao do servico de cotacao" },
+      { "linha": 10, "texto": "6e5d4c3 docs: atualiza README do modulo de catalogo" }
+    ]
+  },
+  "rel-002": {
+    "versao": "4.2.1",
+    "data": "2026-09-18",
+    "linhas": [
+      { "linha": 1, "texto": "b7c8d9e fix(nota-fiscal): corrige arredondamento do valor total na segunda via" },
+      { "linha": 2, "texto": "Merge branch 'hotfix/nf-arredondamento' into main" },
+      { "linha": 3, "texto": "c8d9e0f security: atualiza validacao de sessao expirada no portal de pedidos" },
+      { "linha": 4, "texto": "d9e0f1a chore: ajusta pipeline do Jenkins para publicar artefato assinado" }
+    ]
+  },
+  "rel-003": {
+    "versao": "4.2.2",
+    "data": "2026-09-18",
+    "linhas": [
+      { "linha": 1, "texto": "e0f1a2b wip" },
+      { "linha": 2, "texto": "f1a2b3c ajustes" },
+      { "linha": 3, "texto": "a2b3c4d feat(catalogo): adiciona filtro por montadora compativel no catalogo de pecas" },
+      { "linha": 4, "texto": "b3c4d5e fix" },
+      { "linha": 5, "texto": "c4d5e6f asdf teste local nao commitar" },
+      { "linha": 6, "texto": "d5e6f7a security: remove chave de API do repositorio e move para segredo do pipeline" }
+    ]
+  }
+}
