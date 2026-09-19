@@ -1,0 +1,21 @@
+✔ aceita contrato completo e contabiliza linhas (3.8508ms)
+✔ rejeita categoria desconhecida (0.6959ms)
+✔ rejeita frase com mais de 20 palavras (0.447ms)
+✔ rejeita referência a implementação (0.807ms)
+✔ rejeita linha omitida ou duplicada (0.5173ms)
+✔ rejeita mais de três itens internos (0.6303ms)
+✔ rejeita resumo geral acima de três linhas (0.4373ms)
+✔ renderiza Revisar fora das notas do cliente (0.6483ms)
+✔ escapa HTML e não executa conteúdo do modelo (0.4153ms)
+✔ não declara revisão humana sem registro (0.6739ms)
+✔ rejeita descrição sem verbo no presente (0.3214ms)
+✔ rejeita dados não declarados fictícios antes da API (0.5486ms)
+✔ adapta chamada estruturada e contabiliza tokens incluindo raciocínio (1.8493ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 505.66

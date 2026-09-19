@@ -1,0 +1,198 @@
+{
+  "rel-001": {
+    "versao": "4.2.0",
+    "data": "2026-09-18",
+    "resumo_geral": "Atualiza funcionalidades e rotinas da Carparts.",
+    "itens": [
+      {
+        "linha": 1,
+        "tipo": "Nova funcionalidade",
+        "resumo": "Permite anexar ordem de compra em PDF ao abrir pedidos no portal de pedidos B2B."
+      },
+      {
+        "linha": 2,
+        "tipo": "Correção",
+        "resumo": "Corrige a duplicidade de número de peça na busca do catálogo de peças."
+      },
+      {
+        "linha": 4,
+        "tipo": "Segurança",
+        "resumo": "Reforça a proteção de anexos no portal de pedidos B2B."
+      },
+      {
+        "linha": 6,
+        "tipo": "Interna",
+        "resumo": "Organiza rotinas internas sem alteração perceptível para a montadora cliente."
+      },
+      {
+        "linha": 7,
+        "tipo": "Nova funcionalidade",
+        "resumo": "Exibe o prazo de entrega estimado por item na cotação."
+      },
+      {
+        "linha": 8,
+        "tipo": "Correção",
+        "resumo": "Corrige falhas ao consultar pedidos extensos no portal de pedidos B2B."
+      }
+    ],
+    "ignorados": [
+      3,
+      5,
+      9,
+      10
+    ]
+  },
+  "rel-002": {
+    "versao": "4.2.1",
+    "data": "2026-09-18",
+    "resumo_geral": "Atualiza funcionalidades e rotinas da Carparts.",
+    "itens": [
+      {
+        "linha": 1,
+        "tipo": "Correção",
+        "resumo": "Corrige o arredondamento do valor total na segunda via da nota fiscal."
+      },
+      {
+        "linha": 3,
+        "tipo": "Segurança",
+        "resumo": "Reforça a validação de acesso no portal de pedidos B2B."
+      }
+    ],
+    "ignorados": [
+      2,
+      4
+    ]
+  },
+  "rel-003": {
+    "versao": "4.2.2",
+    "data": "2026-09-18",
+    "resumo_geral": "Atualiza funcionalidades e rotinas da Carparts.",
+    "itens": [
+      {
+        "linha": 1,
+        "tipo": "Revisar",
+        "resumo": "Solicita esclarecimento da mudança antes de redigir as notas."
+      },
+      {
+        "linha": 2,
+        "tipo": "Revisar",
+        "resumo": "Solicita detalhamento dos ajustes informados."
+      },
+      {
+        "linha": 3,
+        "tipo": "Nova funcionalidade",
+        "resumo": "Adiciona filtro por montadora compatível no catálogo de peças."
+      },
+      {
+        "linha": 4,
+        "tipo": "Revisar",
+        "resumo": "Solicita descrição da correção de falha."
+      },
+      {
+        "linha": 5,
+        "tipo": "Revisar",
+        "resumo": "Solicita confirmação do propósito da alteração informada."
+      },
+      {
+        "linha": 6,
+        "tipo": "Segurança",
+        "resumo": "Reforça a proteção das credenciais utilizadas pelo sistema."
+      }
+    ],
+    "ignorados": []
+  },
+  "rel-004": {
+    "versao": "4.3.0",
+    "data": "2026-09-18",
+    "resumo_geral": "Não apresenta mudanças confirmadas para divulgação.",
+    "itens": [],
+    "ignorados": [
+      1,
+      2,
+      3
+    ]
+  },
+  "rel-005": {
+    "versao": "4.3.1",
+    "data": "2026-09-18",
+    "resumo_geral": "Atualiza funcionalidades e rotinas da Carparts.",
+    "itens": [
+      {
+        "linha": 1,
+        "tipo": "Nova funcionalidade",
+        "resumo": "Exibe o prazo de entrega por item na cotação."
+      }
+    ],
+    "ignorados": []
+  },
+  "rel-006": {
+    "versao": "4.3.2",
+    "data": "2026-09-18",
+    "resumo_geral": "Atualiza funcionalidades e rotinas da Carparts.",
+    "itens": [
+      {
+        "linha": 1,
+        "tipo": "Correção",
+        "resumo": "Corrige a busca por número de peça no catálogo de peças."
+      }
+    ],
+    "ignorados": []
+  },
+  "rel-007": {
+    "versao": "4.3.3",
+    "data": "2026-09-18",
+    "resumo_geral": "Atualiza funcionalidades e rotinas da Carparts.",
+    "itens": [
+      {
+        "linha": 1,
+        "tipo": "Segurança",
+        "resumo": "Reforça a proteção de acesso ao portal de pedidos B2B."
+      }
+    ],
+    "ignorados": []
+  },
+  "rel-008": {
+    "versao": "4.3.4",
+    "data": "2026-09-18",
+    "resumo_geral": "Atualiza funcionalidades e rotinas da Carparts.",
+    "itens": [
+      {
+        "linha": 1,
+        "tipo": "Interna",
+        "resumo": "Organiza rotinas internas sem alteração perceptível."
+      },
+      {
+        "linha": 2,
+        "tipo": "Interna",
+        "resumo": "Simplifica rotinas internas sem alteração perceptível."
+      }
+    ],
+    "ignorados": []
+  },
+  "rel-009": {
+    "versao": "4.3.5",
+    "data": "2026-09-18",
+    "resumo_geral": "Não apresenta mudanças confirmadas para divulgação.",
+    "itens": [
+      {
+        "linha": 1,
+        "tipo": "Revisar",
+        "resumo": "Solicita descrição dos ajustes antes de publicar as notas."
+      }
+    ],
+    "ignorados": []
+  },
+  "rel-010": {
+    "versao": "4.3.6",
+    "data": "2026-09-18",
+    "resumo_geral": "Não apresenta mudanças confirmadas para divulgação.",
+    "itens": [
+      {
+        "linha": 1,
+        "tipo": "Revisar",
+        "resumo": "Solicita descrição válida da mudança; a entrada não informa uma alteração verificável."
+      }
+    ],
+    "ignorados": []
+  }
+}

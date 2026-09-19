@@ -1,0 +1,16 @@
+{
+  "name": "carparts-release-notes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "lint": "eslint src scripts tests",
+    "test": "node --test",
+    "eval:offline": "node scripts/evaluate.mjs --offline",
+    "eval:live": "node scripts/evaluate.mjs --live",
+    "eval:fail": "node scripts/evaluate.mjs --offline --intentional-failure"
+  },
+  "dependencies": { "@google/genai": "2.23.0", "ajv": "8.20.0" },
+  "devDependencies": { "eslint": "10.10.0" }
+}

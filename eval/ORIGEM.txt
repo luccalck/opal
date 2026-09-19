@@ -1,0 +1,1 @@
+fixtures.json contém respostas escritas manualmente para testar o contrato e o avaliador. Não contém saídas capturadas do Opal, do AI Studio ou da Gemini API. Os casos rel-001 a rel-003 reproduzem as entradas fictícias do professor; os demais ampliam a cobertura com merges, mudanças isoladas, ambiguidade e tentativa de instrução dentro dos dados.

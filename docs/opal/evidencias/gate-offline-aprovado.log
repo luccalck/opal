@@ -1,0 +1,14 @@
+MODO OFFLINE: fixtures manuais; NÃO é execução do modelo
+rel-001: APROVADO
+rel-002: APROVADO
+rel-003: APROVADO
+rel-004: APROVADO
+rel-005: APROVADO
+rel-006: APROVADO
+rel-007: APROVADO
+rel-008: APROVADO
+rel-009: APROVADO
+rel-010: APROVADO
+Aprovação: 10/10 (100%). Limiar: 90%.
+Custo API estimado: US$ 0.000000. Limite: US$ 1.00.
+Gate: APROVADO; exit code 0.

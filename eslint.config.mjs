@@ -1,0 +1,1 @@
+export default [{ files: ['**/*.mjs'], languageOptions: { ecmaVersion: 'latest', sourceType: 'module', globals: { process: 'readonly', console: 'readonly', URL: 'readonly', structuredClone: 'readonly' } }, rules: { 'no-unused-vars': 'error', 'no-undef': 'error', 'eqeqeq': 'error', 'no-eval': 'error' } }];

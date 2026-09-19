@@ -1,0 +1,107 @@
+name: carparts-ci
+on:
+  pull_request:
+    paths: ['prompts/**', 'src/**', 'eval/**', 'scripts/**', 'tests/**', '.github/**', 'package*.json', 'eslint.config.mjs']
+  push:
+    paths: ['prompts/**', 'src/**', 'eval/**', 'scripts/**', 'tests/**', '.github/**', 'package*.json', 'eslint.config.mjs']
+  workflow_dispatch:
+    inputs:
+      evaluate_live:
+        description: 'Executar Gemini real após revisão do código e dos dados'
+        type: boolean
+        default: false
+      intentional_failure:
+        description: 'Corromper dois resultados para evidenciar bloqueio do gate'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Lint
+        run: npm run lint
+      - name: Testes unitários sem API
+        run: npm test
+      - name: Scan de segredos no histórico
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Teste do contrato com fixtures manuais
+        run: npm run eval:offline
+      - name: Prova offline de que o gate bloqueia falhas
+        run: |
+          set +e
+          npm run eval:fail > outputs/failure.log 2>&1
+          status=$?
+          set -e
+          cat outputs/failure.log
+          test "$status" -eq 1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: contrato-offline
+          path: outputs/
+
+  prompt-live:
+    if: github.event_name == 'workflow_dispatch' && inputs.evaluate_live
+    needs: quality
+    environment: prompt-eval
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts
+      - name: Conferir CODEOWNERS configurado
+        run: test -s .github/CODEOWNERS
+      - name: Avaliar dez casos fictícios contra Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          INTENTIONAL_FAILURE: ${{ inputs.intentional_failure }}
+        run: |
+          if [ "$INTENTIONAL_FAILURE" = "true" ]; then
+            node scripts/evaluate.mjs --live --intentional-failure
+          else
+            node scripts/evaluate.mjs --live
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prompt-live
+          path: outputs/
+          if-no-files-found: ignore
+
+  homologacao:
+    if: github.event_name == 'workflow_dispatch' && inputs.evaluate_live
+    needs: prompt-live
+    environment: homologacao
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts
+      - name: Smoke test do renderizador e contrato
+        run: npm test
+      - name: Empacotar a mesma revisão para aprovação
+        run: git archive --format=zip --output=carparts-release-notes.zip HEAD
+      - uses: actions/upload-artifact@v4
+        with:
+          name: homologacao-${{ github.sha }}
+          path: carparts-release-notes.zip

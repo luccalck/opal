@@ -1,0 +1,5 @@
+# Responsável autorizado; habilitar revisão obrigatória nas regras da branch.
+/prompts/ @luccalck
+/src/ @luccalck
+/eval/ @luccalck
+/.github/ @luccalck

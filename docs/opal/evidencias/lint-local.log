@@ -1,0 +1,2 @@
+Lint local: node node_modules/eslint/bin/eslint.js src scripts tests
+exit code: 0
