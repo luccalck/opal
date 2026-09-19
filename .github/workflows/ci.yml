@@ -14,6 +14,10 @@ on:
         description: 'Corromper dois resultados para evidenciar bloqueio do gate'
         type: boolean
         default: false
+      offline_gate_failure:
+        description: 'Executar uma reprovação offline deliberada do workflow'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -49,6 +53,9 @@ jobs:
           set -e
           cat outputs/failure.log
           test "$status" -eq 1
+      - name: Reprovação deliberada solicitada
+        if: github.event_name == 'workflow_dispatch' && inputs.offline_gate_failure
+        run: npm run eval:fail
       - uses: actions/upload-artifact@v4
         with:
           name: contrato-offline

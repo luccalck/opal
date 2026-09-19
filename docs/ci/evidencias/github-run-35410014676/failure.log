@@ -1,0 +1,18 @@
+
+> carparts-release-notes@1.0.0 eval:fail
+> node scripts/evaluate.mjs --offline --intentional-failure
+
+MODO OFFLINE: fixtures manuais; NÃO é execução do modelo
+rel-001: REPROVADO (falha intencional)
+rel-002: REPROVADO (falha intencional)
+rel-003: APROVADO
+rel-004: APROVADO
+rel-005: APROVADO
+rel-006: APROVADO
+rel-007: APROVADO
+rel-008: APROVADO
+rel-009: APROVADO
+rel-010: APROVADO
+Aprovação: 8/10 (80%). Limiar: 90%.
+Custo API estimado: US$ 0.000000. Limite: US$ 1.00.
+Gate: REPROVADO; exit code 1.
